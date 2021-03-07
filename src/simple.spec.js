@@ -1,14 +1,16 @@
 const {chromium} = require('playwright');
-const expect = require('expect');
-const assert = require("assert");
-let browser;
-let page;
+const chai = require('chai')
+const expect = chai.expect
+
+// playwright variables
+let browser, page, context;
 
 describe("Simple playwright test", async () => {
 
     beforeEach(async () => {
         browser = await chromium.launch({headless: false});
-        page = await browser.newPage();
+        context = await browser.newContext();
+        page = await context.newPage();
     });
 
     afterEach(async () => {
@@ -17,8 +19,7 @@ describe("Simple playwright test", async () => {
 
     it("Page title validation", async () => {
         await page.goto('http://automationpractice.com/index.php');
-
-        expect(await page.title()).to.equal("My Store");
+        expect(await page.title()).to.equal("My Sore");
     });
 
 });
