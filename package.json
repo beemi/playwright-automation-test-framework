@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/beemi/playwright-automation-test-example#readme",
   "devDependencies": {
-    "assert": "^2.0.0",
-    "chai": "^4.3.3",
-    "chance": "^1.1.7",
-    "expect": "^26.6.2",
-    "mocha": "^8.3.1",
-    "playwright": "^1.9.1"
+    "assert": "2.0.0",
+    "chai": "4.3.3",
+    "chance": "1.1.7",
+    "expect": "26.6.2",
+    "mocha": "8.3.1",
+    "playwright": "1.9.1"
   }
 }
