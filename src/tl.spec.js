@@ -94,7 +94,5 @@ describe("paypal", async () => {
         await newPage.fill("#password", "test121");
 
         await newPage.click("#btnLogin");
-
-
     });
 });
