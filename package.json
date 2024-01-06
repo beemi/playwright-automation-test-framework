@@ -9,7 +9,7 @@
   "scripts": {
     "clean:reports": "sh ./pretest.sh",
     "test": "npx playwright test tests/*.spec.ts",
-    "test:ui": "npx playwright test --ui",
+    "test:ui": "npx playwright test --ui tests/*.spec.ts",
     "generate:allure:report": "allure generate my-allure-results -o allure-report --clean",
     "open:allure:report": "allure open allure-report"
   },
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/beemi/playwright-automation-test-example#readme",
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@playwright/test": "^1.40.1",
     "@types/node": "^20.10.6",
     "allure-playwright": "^2.10.0",

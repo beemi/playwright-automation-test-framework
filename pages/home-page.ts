@@ -12,7 +12,13 @@ export class HomePage {
     }
 
     async clickOnLoginButton() {
+        expect(await this.page.isVisible('text=My account')).toBeTruthy();
+        expect(await this.page.title()).toContain('Your Store');
+        // mouse over to My account 2nd element
+        await this.page.hover('.icon.fas.fa-user');
         await this.page.click('text=Login');
+        expect(await this.page.title()).toContain('Account Login');
+        console.log('Login button clicked');
     }
 
     async clickOnRegisterButton() {

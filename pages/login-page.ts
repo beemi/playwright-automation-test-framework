@@ -19,6 +19,11 @@ export class LoginPage {
         await this.page.fill('input[name="password"]', password);
     }
 
+    async clickOnContinueButton() {
+        await this.page.click('text=Continue');
+        console.log('Continue button clicked');
+    }
+
     async clickOnLoginButton() {
         await this.page.click('text=Login');
     }

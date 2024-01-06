@@ -10,18 +10,52 @@ export class RegisterPage {
 
     async navigateToRegisterPage(url: string) {
         await this.page.goto(url);
+        console.log('Register page opened');
     }
 
-    async enterUsername(username: string) {
-        await this.page.fill('input[name="username"]', username);
+    async enterFirstName(firstName: string) {
+        await this.page.fill('#input-firstname', firstName);
+        console.log('First name entered');
+    }
+
+    async enterLastName(lastName: string) {
+        await this.page.fill('#input-lastname', lastName);
+        console.log('Last name entered');
+    }
+
+    async enterEmail(email: string) {
+        await this.page.fill('#input-email', email);
+        console.log('Email entered');
+    }
+
+    async enterTelephone(telephone: string) {
+        await this.page.fill('#input-telephone', telephone);
+        console.log('Telephone entered');
     }
 
     async enterPassword(password: string) {
-        await this.page.fill('input[name="password"]', password);
+        await this.page.fill('#input-password', password);
+        console.log('Password entered');
     }
 
-    async enterConfirmPassword(password: string) {
-        await this.page.fill('input[name="confirmPassword"]', password);
+    async enterConfirmPassword(confirmPassword: string) {
+        await this.page.fill('#input-confirm', confirmPassword);
+        console.log('Confirm password entered');
+    }
+
+    async clickOnSubscribeRadioButton() {
+        await this.page.click('text=Yes');
+        console.log('Subscribe radio button clicked');
+    }
+
+    async clickOnPrivacyPolicyCheckbox() {
+        await this.page.click('label[for=input-agree]');
+        console.log('Privacy Policy checkbox clicked');
+    }
+
+    async clickOnContinueButton() {
+        await this.page.click('text=Continue');
+        console.log('Continue button clicked');
     }
 
     async clickOnRegisterButton() {
