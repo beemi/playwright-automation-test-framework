@@ -67,6 +67,23 @@ To open the allure report, run the following command:
 npm run open:allure:report
 ```
 
+### CI/CD 🚀
+
+The CI/CD pipeline is configured using GitHub Actions. The pipeline is triggered on every push to the main branch.
+The pipeline is configured to run the tests on the following environments:
+
+- Development
+- QA
+- Production
+
+The pipeline is configured to run the tests on the following browsers:
+
+- Chrome
+- Firefox
+- Webkit
+
+GitHub workflow file is located at `.github/workflows/playwright.yml`
+
 ## Contact 📧
 
 If you have any questions, please feel free to reach out to us at [beemi.raja@gmail.com](mailto:beemi.raja@gmail.com)

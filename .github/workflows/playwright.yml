@@ -28,7 +28,9 @@ jobs:
     - name: Run Playwright tests
       run: npm run test
     - name: Generate allure report
-      run: npm run generate:allure:report
+      run: |
+        npm install -g allure-commandline
+        npm run generate:allure:report
     - name: Upload allure report
       uses: actions/upload-artifact@v2
       with:
