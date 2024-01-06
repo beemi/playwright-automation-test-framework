@@ -1,11 +1,11 @@
-#  🎉 Playwright UI Automation Framework  🎉
+# 🌟 Playwright UI Automation Framework 🌟
 
-This repository contains the UI automation framework for the [simple web application](https://ecommerce-playground.lambdatest.io/index.php?route=common/home)
-The framework is built using [Playwright](https://playwright.dev/),
-test are written in [Typescript](https://www.typescriptlang.org/),
-and the test runner is [Jest](https://jestjs.io/),
-and the test reporter is [Allure](https://docs.qameta.io/allure/),
-and the test data is generated using [Faker](https://www.npmjs.com/package/faker),
+This repository contains the UI automation framework for the 🌐 simple web application.
+The framework is built using 🎭 Playwright,
+tests are written in 🔠 Typescript,
+with 🏃 Jest as the test runner,
+📈 Allure for test reporting,
+and 🎲 Faker for test data generation.
 
 ![alt text](docs/playwright-logo.png)
 
@@ -69,21 +69,19 @@ npm run open:allure:report
 
 ### CI/CD 🚀
 
-The CI/CD pipeline is configured using GitHub Actions. The pipeline is triggered on every push to the main branch.
-The pipeline is configured to run the tests on the following environments:
+The CI/CD pipeline, configured with GitHub Actions, triggers on every push to the main branch. It runs tests in:
 
-- Development
-- QA
-- Production
+* 🌐 Development
+* 🌐 QA
+* 🌐 Production
+...and across browsers:
 
-The pipeline is configured to run the tests on the following browsers:
 
-- Chrome
-- Firefox
-- Webkit
+* 🌐 Chrome
+* 🌐 Firefox
+* 🌐 Webkit
 
-GitHub workflow file is located at `.github/workflows/playwright.yml`
+GitHub workflow file: `.github/workflows/playwright.yml`
 
-## Contact 📧
-
-If you have any questions, please feel free to reach out to us at [beemi.raja@gmail.com](mailto:beemi.raja@gmail.com)
+### Contact 📬
+Questions? Reach out to us at 📧 beemi.raja@gmail.com
