@@ -1,7 +1,7 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
 
-const logger = require('../test-utils/logger')('home-page.ts');
+const logger = require('../test-utils/logger')('home-page');
 
 
 export class HomePage {
@@ -24,7 +24,7 @@ export class HomePage {
         await this.page.hover('.icon.fas.fa-user');
         await this.page.click('text=Login');
         expect(await this.page.title()).toContain('Account Login');
-        console.log('Login button clicked');
+        logger.info('Login button is clicked');
     }
 
     async clickOnRegisterButton() {

@@ -1,5 +1,7 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
+const logger = require('../test-utils/logger')('register-page');
+
 export class RegisterPage {
 
     private page: Page;
@@ -10,52 +12,52 @@ export class RegisterPage {
 
     async navigateToRegisterPage(url: string) {
         await this.page.goto(url);
-        console.log('Register page opened');
+        logger.info('Navigated to register page');
     }
 
     async enterFirstName(firstName: string) {
         await this.page.fill('#input-firstname', firstName);
-        console.log('First name entered');
+        logger.info('First name entered');
     }
 
     async enterLastName(lastName: string) {
         await this.page.fill('#input-lastname', lastName);
-        console.log('Last name entered');
+        logger.info('Last name entered');
     }
 
     async enterEmail(email: string) {
         await this.page.fill('#input-email', email);
-        console.log('Email entered as: ' + email);
+        logger.info('Email entered');
     }
 
     async enterTelephone(telephone: string) {
         await this.page.fill('#input-telephone', telephone);
-        console.log('Telephone entered');
+        logger.info('Telephone entered');
     }
 
     async enterPassword(password: string) {
         await this.page.fill('#input-password', password);
-        console.log('Password entered as: ' + password);
+        logger.info('Password entered');
     }
 
     async enterConfirmPassword(confirmPassword: string) {
         await this.page.fill('#input-confirm', confirmPassword);
-        console.log('Confirm password entered as: ' + confirmPassword);
+        logger.info('Confirm password entered');
     }
 
     async clickOnSubscribeRadioButton() {
         await this.page.click('text=Yes');
-        console.log('Subscribe radio button clicked');
+        logger.info('Subscribe radio button clicked');
     }
 
     async clickOnPrivacyPolicyCheckbox() {
         await this.page.click('label[for=input-agree]');
-        console.log('Privacy Policy checkbox clicked');
+        logger.info('Privacy policy checkbox clicked');
     }
 
     async clickOnContinueButton() {
         await this.page.click('text=Continue');
-        console.log('Continue button clicked');
+        logger.info('Continue button clicked');
     }
 
     async clickOnRegisterButton() {
