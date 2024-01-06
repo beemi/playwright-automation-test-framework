@@ -9,6 +9,7 @@ export class HomePage {
 
     async navigateToHomePage(url: string) {
         await this.page.goto(url);
+        console.log('Navigated to: ' + url);
     }
 
     async clickOnLoginButton() {
@@ -24,11 +25,6 @@ export class HomePage {
     async clickOnRegisterButton() {
         await this.page.click('text=Register');
     }
-
-    async clickOnLogoutButton() {
-        await this.page.click('text=Logout');
-    }
-
     async clickOnBillingLineButton() {
         await this.page.click('text=Billing Lines');
     }

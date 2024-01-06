@@ -25,7 +25,7 @@ export class RegisterPage {
 
     async enterEmail(email: string) {
         await this.page.fill('#input-email', email);
-        console.log('Email entered');
+        console.log('Email entered as: ' + email);
     }
 
     async enterTelephone(telephone: string) {
@@ -35,12 +35,12 @@ export class RegisterPage {
 
     async enterPassword(password: string) {
         await this.page.fill('#input-password', password);
-        console.log('Password entered');
+        console.log('Password entered as: ' + password);
     }
 
     async enterConfirmPassword(confirmPassword: string) {
         await this.page.fill('#input-confirm', confirmPassword);
-        console.log('Confirm password entered');
+        console.log('Confirm password entered as: ' + confirmPassword);
     }
 
     async clickOnSubscribeRadioButton() {

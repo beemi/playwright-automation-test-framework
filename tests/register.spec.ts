@@ -4,7 +4,6 @@ import { HomePage } from '../pages/home-page';
 import { LoginPage } from '../pages/login-page';
 
 import { faker } from '@faker-js/faker';
-import exp = require("node:constants");
 
 test.describe('Create new user account', () => {
 
@@ -20,13 +19,15 @@ test.describe('Create new user account', () => {
 
   test('should be able to create a account', async ({page}) => {
 
+    const email = faker.internet.email();
     const password = faker.internet.password();
-    await homePage.navigateToHomePage('https://ecommerce-playground.lambdatest.io/'); //navigate to home page
+
+    await homePage.navigateToHomePage("/");
     await homePage.clickOnLoginButton();
     await loginPage.clickOnContinueButton();
     await registerPage.enterFirstName(faker.person.firstName());
     await registerPage.enterLastName(faker.person.lastName());
-    await registerPage.enterEmail(faker.internet.email());
+    await registerPage.enterEmail(email);
     await registerPage.enterTelephone(faker.phone.number());
     await registerPage.enterPassword(password);
     await registerPage.enterConfirmPassword(password);

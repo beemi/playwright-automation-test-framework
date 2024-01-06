@@ -2,13 +2,13 @@
   "name": "playwright-automation-test-example",
   "version": "1.0.0",
   "description": "Playwright automation test UI framework",
-  "main": "index.js",
+  "main": "",
   "directories": {
-    "test": "src"
+    "test": "tests"
   },
   "scripts": {
     "clean:reports": "sh ./pretest.sh",
-    "test": "npx playwright test tests/*.spec.ts",
+    "test": "TEST_ENVIRONMENT=dev npx playwright test tests/*.spec.ts",
     "test:ui": "npx playwright test --ui tests/*.spec.ts",
     "generate:allure:report": "allure generate allure-results -o allure-report --clean",
     "open:allure:report": "allure open allure-report"
@@ -32,6 +32,14 @@
     "chai": "^4.3.3",
     "chance": "^1.1.7",
     "expect": "^26.6.2",
-    "playwright": "^1.9.1"
+    "playwright": "1.40.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.4.3",
+    "uuid": "^8.3.2",
+    "ts-loader": "^9.2.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ts-node": "^10.9.2"
   }
 }

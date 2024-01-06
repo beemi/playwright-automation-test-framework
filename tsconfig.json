@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "sourceMap": true,
+    "esModuleInterop": true,
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "strict": true,
@@ -8,5 +9,5 @@
     "noEmit": true,
     "resolveJsonModule": true
   },
-  "include": ["tests"]
+  "include": ["tests","pages"]
 }

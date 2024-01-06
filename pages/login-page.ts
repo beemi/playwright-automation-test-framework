@@ -7,16 +7,12 @@ export class LoginPage {
         this.page = page;
     }
 
-    async navigateToLoginPage(url: string) {
-        await this.page.goto(url);
-    }
-
-    async enterUsername(username: string) {
-        await this.page.fill('input[name="username"]', username);
+    async enterEmail(email: string) {
+        await this.page.fill('#input-email', email);
     }
 
     async enterPassword(password: string) {
-        await this.page.fill('input[name="password"]', password);
+        await this.page.fill('#input-password', password);
     }
 
     async clickOnContinueButton() {
@@ -25,7 +21,7 @@ export class LoginPage {
     }
 
     async clickOnLoginButton() {
-        await this.page.click('text=Login');
+        await this.page.click('input[value=Login]');
     }
 
     async clickOnRegisterButton() {
@@ -34,6 +30,8 @@ export class LoginPage {
 
     async clickOnLogoutButton() {
         await this.page.click('text=Logout');
+        console.log('Logout button clicked');
+        await this.page.waitForSelector('#input-email');
     }
 
     async clickOnBillingLineButton() {
