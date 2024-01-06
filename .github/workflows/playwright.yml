@@ -1,9 +1,17 @@
-name: Playwright Tests
+---
+name: Playwright Tests 🚀 🚀 🚀
+run-name: ➡️ ${{ github.ref }} - ${{ github.event_name }} (${{ github.event.action }})
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: true
+
 jobs:
   test:
     timeout-minutes: 60
@@ -18,10 +26,11 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v3
-      if: always()
+      run: npm run test
+    - name: Generate allure report
+      run: npm run generate:allure:report
+    - name: Upload allure report
+      uses: actions/upload-artifact@v2
       with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+        name: allure-report
+        path: allure-report
