@@ -4,6 +4,7 @@ import { HomePage } from '../pages/home-page';
 import { LoginPage } from '../pages/login-page';
 
 import { faker } from '@faker-js/faker';
+import exp = require("node:constants");
 
 test.describe('Create new user account', () => {
 
@@ -17,7 +18,7 @@ test.describe('Create new user account', () => {
     loginPage = new LoginPage(page);
   });
 
-  test('should be able to create a account', async () => {
+  test('should be able to create a account', async ({page}) => {
 
     const password = faker.internet.password();
     await homePage.navigateToHomePage('https://ecommerce-playground.lambdatest.io/'); //navigate to home page
@@ -34,5 +35,8 @@ test.describe('Create new user account', () => {
     await registerPage.clickOnContinueButton();
 
     // get the url of the current page
+    const url = page.url();
+    expect(url).toContain('account/success');
+    console.log('Current page url is: ' + url);
   });
 });
