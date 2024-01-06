@@ -66,7 +66,7 @@ jobs:
         keep_reports: 5
 
     - name: Upload allure report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4.0.0
       with:
         name: allure-report
         path: allure-report
