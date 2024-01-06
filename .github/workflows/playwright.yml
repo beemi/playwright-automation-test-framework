@@ -21,16 +21,50 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
+
+    - name: Get Allure History from gh-pages branch 🛎️ 🛎️ 🛎️
+      uses: actions/checkout@v4.1.0
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+
+    - name: Get timestamps clock 🕒 🕒 🕒
+      run: |
+        echo "NOW=$(date +'%H:%M:%S %m-%d-%Y')" >> $GITHUB_ENV
+        echo "BST_NOW=$(TZ=Europe/London date +'%H:%M:%S %d-%m-%Y')" >> $GITHUB_ENV
+
     - name: Install dependencies
       run: npm install
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+
     - name: Run Playwright tests
       run: npm run test
-    - name: Generate allure report
+
+    - name: Add environment details to allure results directory 🧳 🧳 🧳
+      id: add-environment-details
+      if: always()
       run: |
-        npm install -g allure-commandline
-        npm run generate:allure:report
+        echo "Environment=${TEST_ENV}" >> allure-results/environment.properties
+        echo "BuildTime=${NOW}" >> allure-results/environment.properties
+        echo "Run=${{ github.run_number }}" >> allure-results/environment.properties
+        echo "Branch=refs/heads/main" >> allure-results/environment.properties
+        cat allure-results/environment.properties
+        cp allure-config/categories.json allure-results/categories.json
+
+    - name: Allure Report Action from Marketplace 📚 📚 📚
+      uses: simple-elf/allure-report-action@v1.7
+      if: always()
+      with:
+        allure_results: allure-results
+        gh_pages: gh-pages
+        allure_report: allure-report
+        allure_history: allure-history
+        keep_reports: 5
+
     - name: Upload allure report
       uses: actions/upload-artifact@v2
       with:
