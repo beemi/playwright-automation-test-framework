@@ -9,6 +9,8 @@ on:
     branches: [ main ]
 
 permissions:
+    pages: write
+    id-token: write
     contents: read
     packages: write
     pull-requests: write
@@ -22,7 +24,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-node@v3
       with:
         node-version: 18
@@ -69,6 +71,15 @@ jobs:
         allure_report: allure-report
         allure_history: allure-history
         keep_reports: 5
+
+    - name: Deploy report to Github Pages 🚀 🚀 🚀
+      if: always()
+      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      with:
+        folder: allure-history
+        branch: gh-pages
+        commit-message: Deploy report to Github Pages
+        single-commit: true
 
     - name: Upload allure report
       uses: actions/upload-artifact@v4.0.0
