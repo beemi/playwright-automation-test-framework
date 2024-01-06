@@ -1,5 +1,9 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
+
+const logger = require('../test-utils/logger')('home-page.ts');
+
+
 export class HomePage {
     private page: Page;
 
@@ -9,12 +13,13 @@ export class HomePage {
 
     async navigateToHomePage(url: string) {
         await this.page.goto(url);
-        console.log('Navigated to: ' + url);
+        logger.info('Navigated to home page');
     }
 
     async clickOnLoginButton() {
         expect(await this.page.isVisible('text=My account')).toBeTruthy();
         expect(await this.page.title()).toContain('Your Store');
+        logger.info('My account button is visible');
         // mouse over to My account 2nd element
         await this.page.hover('.icon.fas.fa-user');
         await this.page.click('text=Login');

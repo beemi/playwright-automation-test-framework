@@ -3,7 +3,9 @@ import {PlaywrightTestConfig} from '@playwright/test'
 const config: PlaywrightTestConfig = {
     globalSetup: require.resolve('./global-setup'),
     timeout: 600000,
-    retries: 2,
+    retries: 0,
+    fullyParallel: true,
+    workers: 2,
     use: {
         baseURL: process.env.BASE_URL,
         ignoreHTTPSErrors: true,

@@ -29,9 +29,13 @@ export class LoginPage {
     }
 
     async clickOnLogoutButton() {
-        await this.page.click('text=Logout');
+        await this.page.click("//a[contains(text(),'Logout')]");
         console.log('Logout button clicked');
-        await this.page.waitForSelector('#input-email');
+        await this.page.waitForSelector('#common-success');
+        expect(await this.page.isVisible('#common-success')).toBeTruthy();
+        const successMessage = await this.page.textContent('#common-success');
+        expect(successMessage).toContain('You have been logged off your account. It is now safe to leave the computer.');
+        console.log('Logout success message is: ' + successMessage);
     }
 
     async clickOnBillingLineButton() {
