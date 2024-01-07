@@ -81,8 +81,8 @@ jobs:
     - name: Upload allure report   🔺 🔺 🔺
       uses: actions/upload-artifact@v4.0.0
       with:
-        name: allure-report
-        path: allure-report
+        name: allure-history
+        path: allure-history
 
   deploy:
     needs: [test]
@@ -99,8 +99,8 @@ jobs:
       - name: Download Artifacts 🔻
         uses: actions/download-artifact@v4.1.0
         with:
-          name: allure-report
-          path: allure-report
+          name: allure-history
+          path: allure-history
 
       - name: Deploy report to Github Pages 🚀 🚀 🚀
         if: always()
