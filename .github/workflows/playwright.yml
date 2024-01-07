@@ -85,8 +85,7 @@ jobs:
         path: allure-report
 
   deploy:
-    needs:
-      - test
+    needs: [test]
     timeout-minutes: 60
     runs-on: ubuntu-latest
     env:
@@ -98,7 +97,7 @@ jobs:
           fetch-depth: 0
 
       - name: Download Artifacts 🔻
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.0
         with:
           name: allure-report
           path: allure-report
