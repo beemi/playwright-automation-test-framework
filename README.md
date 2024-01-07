@@ -7,6 +7,14 @@ with 🏃 Jest as the test runner,
 📈 Allure for test reporting,
 and 🎲 Faker for test data generation.
 
+## Table of Contents 📚
+
+* [Project Structure](#project-structure)
+* [Installation](#installation)
+* [Reporting](#reporting)
+* [CI/CD](#cicd)
+* [Contact](#contact)
+
 ![alt text](docs/playwright-logo.png)
 
 ## Project Structure 🏷️
