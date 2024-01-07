@@ -47,9 +47,15 @@ Check the installation by running the following command:
 ```bash
 npx playwright --version
 ```
+Run all tests in headless mode:
 
 ```bash
 npm test
+```
+Run all tests in headed mode:
+
+```bash
+npm run test:headed
 ```
 
 ### Reporting 📊

@@ -10,7 +10,7 @@
     "clean:reports": "sh ./pretest.sh",
     "codegen": "npx playwright codegen",
     "test": "TEST_ENVIRONMENT=dev npx playwright test tests/*.spec.ts",
-    "test:ui": "TEST_ENVIRONMENT=dev npx playwright test --ui tests/*.spec.ts",
+    "test:headed": "TEST_ENVIRONMENT=dev npx playwright test --ui tests/*.spec.ts",
     "generate:allure:report": "allure generate allure-results -o allure-report --clean",
     "open:allure:report": "allure open allure-report"
   },
