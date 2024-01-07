@@ -78,17 +78,37 @@ jobs:
         allure_history: allure-history
         keep_reports: 5
 
-    - name: Deploy report to Github Pages 🚀 🚀 🚀
-      if: always()
-      uses: JamesIves/github-pages-deploy-action@v4.5.0
-      with:
-        folder: allure-history
-        branch: gh-pages
-        commit-message: Deploy report to Github Pages
-        single-commit: true
-
-    - name: Upload allure report
+    - name: Upload allure report   🔺 🔺 🔺
       uses: actions/upload-artifact@v4.0.0
       with:
         name: allure-report
         path: allure-report
+
+  deploy:
+    needs:
+      - test
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download Artifacts 🔻
+        uses: actions/download-artifact@v2
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: Deploy report to Github Pages 🚀 🚀 🚀
+        if: always()
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        with:
+          folder: allure-history
+          branch: gh-pages
+          commit-message: Deploy report to Github Pages
+          single-commit: true
+
