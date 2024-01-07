@@ -83,5 +83,7 @@ The CI/CD pipeline, configured with GitHub Actions, triggers on every push to th
 
 GitHub workflow file: `.github/workflows/playwright.yml`
 
+Allure reports are generated and published via GitHub Pages.
+
 ### Contact 📬
 Questions? Reach out to us at 📧 beemi.raja@gmail.com
