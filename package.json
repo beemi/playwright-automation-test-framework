@@ -44,7 +44,7 @@
     "winston": "^3.3.3"
   },
   "dependencies": {
-    "dotenv": "^16.3.2",
+    "dotenv": "^16.4.1",
     "ts-node": "^10.9.2"
   }
 }
