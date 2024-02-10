@@ -31,7 +31,7 @@
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.41.2",
     "playwright": "1.41.2",
-    "@types/node": "^20.11.16",
+    "@types/node": "^20.11.17",
     "allure-playwright": "^2.12.0",
     "assert": "^2.0.0",
     "chai": "^4.4.1",
