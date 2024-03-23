@@ -1,0 +1,14 @@
+[2024-03-16T00:41:44.963Z] undefined info: Navigated to home page
+[2024-03-16T00:41:45.368Z] undefined info: My account button is visible
+[2024-03-16T00:41:45.847Z] undefined info: Login button is clicked
+[2024-03-16T00:41:46.433Z] undefined info: Continue button is clicked
+[2024-03-16T00:41:46.770Z] undefined info: First name entered
+[2024-03-16T00:41:46.798Z] undefined info: Last name entered
+[2024-03-16T00:41:46.828Z] undefined info: Email entered
+[2024-03-16T00:41:46.862Z] undefined info: Telephone entered
+[2024-03-16T00:41:46.893Z] undefined info: Password entered
+[2024-03-16T00:41:46.927Z] undefined info: Confirm password entered
+[2024-03-16T00:41:47.002Z] undefined info: Subscribe radio button clicked
+[2024-03-16T00:41:47.071Z] undefined info: Privacy policy checkbox clicked
+[2024-03-16T00:41:47.393Z] undefined info: Continue button clicked
+Warning message is: getByText('Warning: E-Mail Address is')

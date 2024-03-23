@@ -1,0 +1,9 @@
+[2024-03-23T00:41:00.721Z] undefined info: Navigated to home page
+[2024-03-23T00:41:01.321Z] undefined info: My account button is visible
+[2024-03-23T00:41:01.838Z] undefined info: Login button is clicked
+[2024-03-23T00:41:02.018Z] undefined info: Email is entered
+[2024-03-23T00:41:02.080Z] undefined info: Password is entered
+[2024-03-23T00:41:02.508Z] undefined info: Login button is clicked
+Current page url is: https://ecommerce-playground.lambdatest.io/index.php?route=account/account
+[2024-03-23T00:41:02.956Z] undefined info: Logout button is clicked
+[2024-03-23T00:41:03.166Z] undefined info: User is logged out

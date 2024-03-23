@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Mar 16 00:41:35 GMT 2024","Sat Mar 16 00:41:43 GMT 2024","7457","Chrome","tests/login.spec.ts","Login","","","should be able to login",""
+"passed","Sat Mar 16 00:41:43 GMT 2024","Sat Mar 16 00:41:47 GMT 2024","4453","Chrome","tests/register.spec.ts","Create new user account","","","shouln't be able to create a account with existing email",""
+"passed","Sat Mar 16 00:41:37 GMT 2024","Sat Mar 16 00:41:43 GMT 2024","6193","Chrome","tests/register.spec.ts","Create new user account","","","should be able to create a account",""

@@ -1,0 +1,14 @@
+[2024-03-16T00:41:39.636Z] undefined info: Navigated to home page
+[2024-03-16T00:41:40.234Z] undefined info: My account button is visible
+[2024-03-16T00:41:40.854Z] undefined info: Login button is clicked
+[2024-03-16T00:41:41.547Z] undefined info: Continue button is clicked
+[2024-03-16T00:41:41.792Z] undefined info: First name entered
+[2024-03-16T00:41:41.827Z] undefined info: Last name entered
+[2024-03-16T00:41:41.862Z] undefined info: Email entered
+[2024-03-16T00:41:41.979Z] undefined info: Telephone entered
+[2024-03-16T00:41:42.013Z] undefined info: Password entered
+[2024-03-16T00:41:42.060Z] undefined info: Confirm password entered
+[2024-03-16T00:41:42.263Z] undefined info: Subscribe radio button clicked
+[2024-03-16T00:41:42.338Z] undefined info: Privacy policy checkbox clicked
+[2024-03-16T00:41:42.796Z] undefined info: Continue button clicked
+Current page url is: https://ecommerce-playground.lambdatest.io/index.php?route=account/success
