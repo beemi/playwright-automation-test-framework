@@ -32,7 +32,7 @@
     "@playwright/test": "^1.42.1",
     "playwright": "1.42.1",
     "@types/node": "^20.11.28",
-    "allure-playwright": "^2.14.1",
+    "allure-playwright": "^2.15.0",
     "assert": "^2.0.0",
     "chai": "^4.4.1",
     "chance": "^1.1.7",
