@@ -27,7 +27,7 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
-    test:
+  run_tests:
         timeout-minutes: 60
         runs-on: ubuntu-latest
         env:
@@ -91,8 +91,8 @@ jobs:
                   name: allure-history
                   path: allure-history
 
-    deploy:
-        needs: [test]
+  deploy:
+        needs: [run_tests]
         timeout-minutes: 60
         runs-on: ubuntu-latest
         env:
