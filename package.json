@@ -4,8 +4,10 @@
   "directories": {
     "test": "tests"
   },
+  "type": "commonjs",
   "scripts": {
     "clean:reports": "rimraf allure-report allure-results test-results playwright-report",
+    "lint": "eslint . --ext .ts --fix",
     "pretty": "prettier --write .",
     "codegen": "npx playwright codegen",
     "test": "TEST_ENVIRONMENT=dev npx playwright test tests/*.spec.ts",
@@ -27,13 +29,22 @@
   },
   "homepage": "https://github.com/beemi/playwright-automation-test-example#readme",
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.3.0",
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.44.0",
     "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "5.13.0",
+    "@typescript-eslint/parser": "5.13.0",
     "allure-playwright": "^2.15.1",
     "assert": "^2.0.0",
     "chai": "^4.4.1",
     "chance": "^1.1.7",
+    "eslint": "8.10.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "eslint-plugin-unused-imports": "2.0.0",
     "expect": "^26.6.2",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.4",
@@ -42,7 +53,7 @@
     "rimraf": "^3.0.2",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.9.2",
-    "typescript": "^4.4.3",
+    "typescript": "^4.9.5",
     "uuid": "^9.0.1",
     "winston": "^3.13.0"
   },
@@ -51,6 +62,12 @@
     "ts-node": "^10.9.2"
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,css,md,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }

@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from '@playwright/test'
+import { type Page } from '@playwright/test'
 
 const logger = require('../test-utils/logger')('register-page')
 

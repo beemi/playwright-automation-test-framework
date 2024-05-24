@@ -5,9 +5,11 @@ const config: PlaywrightTestConfig = {
     timeout: 600000,
     retries: 0,
     fullyParallel: true,
-    workers: 2,
+    workers: process.env.CI ? 4 : 1,
     use: {
-        baseURL: process.env.BASE_URL,
+        baseURL:
+            process.env.BASE_URL ||
+            'https://ecommerce-playground.lambdatest.io',
         ignoreHTTPSErrors: true,
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
@@ -19,7 +21,7 @@ const config: PlaywrightTestConfig = {
         headless: true,
         actionTimeout: 30000,
     },
-    reporter: [['list'], ['allure-playwright']],
+    reporter: [['allure-playwright']],
     projects: [
         {
             name: 'Chrome',

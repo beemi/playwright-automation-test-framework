@@ -5,5 +5,6 @@
 **/test-results
 **/playwright-report
 **/coverage
+**/docs
 package.json
 package-lock.json

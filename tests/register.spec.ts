@@ -1,11 +1,11 @@
+import { faker } from '@faker-js/faker'
 import { expect, test } from '@playwright/test'
 import { allure } from 'allure-playwright'
 
-import { RegisterPage } from '../pages/register-page'
 import { HomePage } from '../pages/home-page'
 import { LoginPage } from '../pages/login-page'
-
-import { faker } from '@faker-js/faker'
+import { RegisterPage } from '../pages/register-page'
+import { ConfigUtils } from '../test-utils/config-utils'
 
 test.describe('Create new user account', () => {
     let registerPage: RegisterPage
@@ -84,7 +84,7 @@ test.describe('Create new user account', () => {
     test("shouln't be able to create a account with existing email", async ({
         page,
     }) => {
-        const email = process.env.USER_EMAIL_NAME
+        const email = ConfigUtils.getConfigValue('USER_EMAIL_NAME')
         const password = faker.internet.password()
 
         await allure.step('Navigate to home page', async () => {
@@ -108,7 +108,6 @@ test.describe('Create new user account', () => {
         })
 
         await allure.step('Enter email', async () => {
-            // @ts-ignore
             await registerPage.enterEmail(email)
         })
 

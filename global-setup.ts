@@ -1,4 +1,6 @@
-let TEST_ENVIRONMENT = process.env.TEST_ENVIRONMENT
+import dotenv from 'dotenv'
+
+const TEST_ENVIRONMENT = process.env.TEST_ENVIRONMENT
 
 if (!TEST_ENVIRONMENT) {
     throw new Error(
@@ -8,7 +10,7 @@ if (!TEST_ENVIRONMENT) {
 
 async function globalSetup() {
     console.log(`Running tests in ${TEST_ENVIRONMENT} environment`)
-    require('dotenv').config({ path: `./config/${TEST_ENVIRONMENT}.env` })
+    dotenv.config({ path: `./config/${TEST_ENVIRONMENT}.env` })
 }
 
-module.exports = globalSetup
+export default globalSetup
