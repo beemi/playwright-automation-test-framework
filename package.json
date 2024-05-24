@@ -1,8 +1,6 @@
 {
   "name": "playwright-automation-test-example",
-  "version": "1.0.0",
   "description": "Playwright automation test UI framework",
-  "main": "",
   "directories": {
     "test": "tests"
   },
@@ -18,13 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beemi/playwright-automation-test-example.git"
+    "url": "https://github.com/beemi/playwright-automation-test-example.git"
   },
   "author": {
     "name": "Beemi",
     "email": "beemi.raja@gmail.com"
   },
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/beemi/playwright-automation-test-example/issues"
   },
