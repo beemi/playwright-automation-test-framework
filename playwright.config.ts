@@ -21,7 +21,7 @@ const config: PlaywrightTestConfig = {
         headless: true,
         actionTimeout: 30000,
     },
-    reporter: [['allure-playwright']],
+    reporter: [['allure-playwright'], ['@estruyf/github-actions-reporter']],
     projects: [
         {
             name: 'Chrome',
