@@ -84,6 +84,8 @@ npm run lint
 
 Also `husky` is configured in the project to run the linting and formatting on every commit.
 
+:warning: _**Note:**_ Git commit message should follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format.
+
 ### Reporting 📊
 
 [Allure GitHub](https://allurereport.org/docs/integrations-github/)
