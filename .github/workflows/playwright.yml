@@ -90,7 +90,7 @@ jobs:
                   name: allure-history
                   path: allure-history
 
-  deploy:
+  deploy_allure_reports:
         needs: [run_tests]
         timeout-minutes: 60
         runs-on: ubuntu-latest

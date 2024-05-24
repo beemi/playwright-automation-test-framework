@@ -74,7 +74,19 @@ Run all tests in headed mode:
 npm run test:headed
 ```
 
+### Lint 🧹 and Format 🎨
+
+To lint the code, run the following command:
+
+```bash
+npm run lint
+```
+
+Also `husky` is configured in the project to run the linting and formatting on every commit.
+
 ### Reporting 📊
+
+[Allure GitHub](https://allurereport.org/docs/integrations-github/)
 
 To generate the allure report, run the following command:
 
