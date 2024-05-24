@@ -5,6 +5,13 @@ run-name: ➡️ ${{ github.ref }} - ${{ github.event_name }} (${{ github.event.
 on:
     push:
         branches: [main]
+        paths-ignore:
+          - 'README.md'
+          - 'CHANGELOG.md'
+          - 'CONTRIBUTING.md'
+          - '.github/**'
+          - 'docs/**'
+          - 'allure-results/**'
     pull_request:
         branches: [main]
 

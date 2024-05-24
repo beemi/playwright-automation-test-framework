@@ -1,4 +1,12 @@
-# 🌟 Playwright UI Automation Framework 🌟
+# 🎭 Playwright UI Automation Framework 🎭
+
+[![Playwright](https://img.shields.io/badge/Playwright-1.44.0-blue)](https://playwright.dev/)
+[![Typescript](https://img.shields.io/badge/Typescript-4.9.5-blue)](https://www.typescriptlang.org/)
+[![Allure](https://img.shields.io/badge/Allure-2.13.8-blue)](https://docs.qameta.io/allure/)
+[![Node](https://img.shields.io/badge/Node-14.17.6-green)](https://nodejs.org/en/)
+[![Npm](https://img.shields.io/badge/Npm-6.14.15-green)](https://www.npmjs.com/)
+
+## Introduction 📝
 
 This repository contains the UI automation framework for the 🌐 simple web application.
 The framework is built using 🎭 Playwright,
@@ -14,8 +22,6 @@ and 🎲 Faker for test data generation.
 -   [Reporting](#reporting)
 -   [CI/CD](#cicd)
 -   [Contact](#contact)
-
-![alt text](docs/playwright-logo.png)
 
 ## Project Structure 🏷️
 
