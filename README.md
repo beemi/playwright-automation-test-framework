@@ -19,11 +19,12 @@ and 🎲 Faker for test data generation.
 
 -   [Project Structure](#project-structure)
 -   [Installation](#installation)
+-   [Lint and Format](#lint-and-format)
 -   [Reporting](#reporting)
 -   [CI/CD](#cicd)
 -   [Contact](#contact)
 
-## Project Structure 🏷️
+## Project Structure 📁
 
 ```angular2html
 ├───.github
@@ -50,7 +51,7 @@ and 🎲 Faker for test data generation.
 ├───allure-results # contains the allure results
 ```
 
-## Installation 🔨
+## Installation 🛠
 
 ```bash
 npm init playwright@latest
@@ -120,6 +121,10 @@ GitHub workflow file: `.github/workflows/playwright.yml`
 
 Allure reports are generated and published via GitHub Pages.
 
-### Contact 📬
+### Contact 📧
 
-Questions? Reach out to us at 📧 beemi.raja@gmail.com
+Questions? Reach out to us at 📧 [beemi.raja@gmail.com](mailto:beemi.raja@gmail.com)
+
+```
+
+```
