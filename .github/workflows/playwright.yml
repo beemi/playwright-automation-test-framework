@@ -9,7 +9,6 @@ on:
           - 'README.md'
           - 'CHANGELOG.md'
           - 'CONTRIBUTING.md'
-          - '.github/**'
           - 'docs/**'
           - 'allure-results/**'
     pull_request:
