@@ -3,10 +3,10 @@ name: Playwright Tests 🚀 🚀 🚀
 run-name: ➡️ ${{ github.ref }} - ${{ github.event_name }} (${{ github.event.action }})
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 permissions:
     pages: write
@@ -16,98 +16,97 @@ permissions:
     pull-requests: write
 
 concurrency:
-  group: ${{ github.ref }}-${{ github.event_name }}
-  cancel-in-progress: true
+    group: ${{ github.ref }}-${{ github.event_name }}
+    cancel-in-progress: true
 
 jobs:
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-    - name: Checkout 🛎️
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+    test:
+        timeout-minutes: 60
+        runs-on: ubuntu-latest
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        steps:
+            - name: Checkout 🛎️
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
 
-    - name: Get Allure History from gh-pages branch 🛎️ 🛎️ 🛎️
-      uses: actions/checkout@v4.1.0
-      if: always()
-      continue-on-error: true
-      with:
-        ref: gh-pages
-        path: gh-pages
+            - name: Get Allure History from gh-pages branch 🛎️ 🛎️ 🛎️
+              uses: actions/checkout@v4.1.0
+              if: always()
+              continue-on-error: true
+              with:
+                  ref: gh-pages
+                  path: gh-pages
 
-    - name: Get timestamps clock 🕒 🕒 🕒
-      run: |
-        echo "NOW=$(date +'%H:%M:%S %m-%d-%Y')" >> $GITHUB_ENV
-        echo "BST_NOW=$(TZ=Europe/London date +'%H:%M:%S %d-%m-%Y')" >> $GITHUB_ENV
+            - name: Get timestamps clock 🕒 🕒 🕒
+              run: |
+                  echo "NOW=$(date +'%H:%M:%S %m-%d-%Y')" >> $GITHUB_ENV
+                  echo "BST_NOW=$(TZ=Europe/London date +'%H:%M:%S %d-%m-%Y')" >> $GITHUB_ENV
 
-    - name: Install dependencies
-      run: npm install
+            - name: Install dependencies
+              run: npm install
 
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+            - name: Install Playwright Browsers
+              run: npx playwright install --with-deps
 
-    - name: Run Playwright tests
-      run: npm run test
+            - name: Run Playwright tests
+              run: npm run test
 
-    - name: Add environment details to allure results directory 🧳 🧳 🧳
-      id: add-environment-details
-      if: always()
-      run: |
-        echo "Environment=${TEST_ENV}" >> allure-results/environment.properties
-        echo "BuildTime=${NOW}" >> allure-results/environment.properties
-        echo "Run=${{ github.run_number }}" >> allure-results/environment.properties
-        echo "Branch=refs/heads/main" >> allure-results/environment.properties
-        cat allure-results/environment.properties
-        cp allure-config/categories.json allure-results/categories.json
+            - name: Add environment details to allure results directory 🧳 🧳 🧳
+              id: add-environment-details
+              if: always()
+              run: |
+                  echo "Environment=${TEST_ENV}" >> allure-results/environment.properties
+                  echo "BuildTime=${NOW}" >> allure-results/environment.properties
+                  echo "Run=${{ github.run_number }}" >> allure-results/environment.properties
+                  echo "Branch=refs/heads/main" >> allure-results/environment.properties
+                  cat allure-results/environment.properties
+                  cp allure-config/categories.json allure-results/categories.json
 
-    - name: Allure Report Action from Marketplace 📚 📚 📚
-      uses: simple-elf/allure-report-action@v1.7
-      if: always()
-      with:
-        allure_results: allure-results
-        gh_pages: gh-pages
-        allure_report: allure-report
-        allure_history: allure-history
-        keep_reports: 5
+            - name: Allure Report Action from Marketplace 📚 📚 📚
+              uses: simple-elf/allure-report-action@v1.7
+              if: always()
+              with:
+                  allure_results: allure-results
+                  gh_pages: gh-pages
+                  allure_report: allure-report
+                  allure_history: allure-history
+                  keep_reports: 5
 
-    - name: Upload allure report   🔺 🔺 🔺
-      uses: actions/upload-artifact@v4.0.0
-      with:
-        name: allure-history
-        path: allure-history
+            - name: Upload allure report   🔺 🔺 🔺
+              uses: actions/upload-artifact@v4.0.0
+              with:
+                  name: allure-history
+                  path: allure-history
 
-  deploy:
-    needs: [test]
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    deploy:
+        needs: [test]
+        timeout-minutes: 60
+        runs-on: ubuntu-latest
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        steps:
+            - name: Checkout 🛎️
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
-      - name: Download Artifacts 🔻
-        uses: actions/download-artifact@v4.1.0
-        with:
-          name: allure-history
-          path: allure-history
+            - name: Download Artifacts 🔻
+              uses: actions/download-artifact@v4.1.0
+              with:
+                  name: allure-history
+                  path: allure-history
 
-      - name: Deploy report to Github Pages 🚀 🚀 🚀
-        if: always()
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
-        with:
-          folder: allure-history
-          branch: gh-pages
-          commit-message: Deploy report to Github Pages
-          single-commit: true
-
+            - name: Deploy report to Github Pages 🚀 🚀 🚀
+              if: always()
+              uses: JamesIves/github-pages-deploy-action@v4.5.0
+              with:
+                  folder: allure-history
+                  branch: gh-pages
+                  commit-message: Deploy report to Github Pages
+                  single-commit: true

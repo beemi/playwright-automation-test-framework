@@ -9,11 +9,11 @@ and 🎲 Faker for test data generation.
 
 ## Table of Contents 📚
 
-* [Project Structure](#project-structure)
-* [Installation](#installation)
-* [Reporting](#reporting)
-* [CI/CD](#cicd)
-* [Contact](#contact)
+-   [Project Structure](#project-structure)
+-   [Installation](#installation)
+-   [Reporting](#reporting)
+-   [CI/CD](#cicd)
+-   [Contact](#contact)
 
 ![alt text](docs/playwright-logo.png)
 
@@ -55,11 +55,13 @@ Check the installation by running the following command:
 ```bash
 npx playwright --version
 ```
+
 Run all tests in headless mode:
 
 ```bash
 npm test
 ```
+
 Run all tests in headed mode:
 
 ```bash
@@ -85,19 +87,19 @@ npm run open:allure:report
 
 The CI/CD pipeline, configured with GitHub Actions, triggers on every push to the main branch. It runs tests in:
 
-* 🌐 Development
-* 🌐 QA
-* 🌐 Production
-...and across browsers:
+-   🌐 Development
+-   🌐 QA
+-   🌐 Production
+    ...and across browsers:
 
-
-* 🌐 Chrome
-* 🌐 Firefox
-* 🌐 Webkit
+-   🌐 Chrome
+-   🌐 Firefox
+-   🌐 Webkit
 
 GitHub workflow file: `.github/workflows/playwright.yml`
 
 Allure reports are generated and published via GitHub Pages.
 
 ### Contact 📬
+
 Questions? Reach out to us at 📧 beemi.raja@gmail.com

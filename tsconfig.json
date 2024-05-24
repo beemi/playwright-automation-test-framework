@@ -1,13 +1,13 @@
 {
-  "compilerOptions": {
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "strict": true,
-    "module": "commonjs",
-    "noEmit": true,
-    "resolveJsonModule": true
-  },
-  "include": ["tests","pages"]
+    "compilerOptions": {
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "target": "es6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "strict": true,
+        "module": "commonjs",
+        "noEmit": true,
+        "resolveJsonModule": true
+    },
+    "include": ["tests", "pages"]
 }

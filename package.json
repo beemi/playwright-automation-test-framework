@@ -7,12 +7,14 @@
     "test": "tests"
   },
   "scripts": {
-    "clean:reports": "sh ./pretest.sh",
+    "clean:reports": "rimraf allure-report allure-results test-results playwright-report",
+    "pretty": "prettier --write .",
     "codegen": "npx playwright codegen",
     "test": "TEST_ENVIRONMENT=dev npx playwright test tests/*.spec.ts",
     "test:headed": "TEST_ENVIRONMENT=dev npx playwright test --ui tests/*.spec.ts",
     "generate:allure:report": "allure generate allure-results -o allure-report --clean",
-    "open:allure:report": "allure open allure-report"
+    "open:allure:report": "allure open allure-report",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -30,21 +32,28 @@
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.44.0",
-    "playwright": "1.44.0",
     "@types/node": "^20.12.12",
     "allure-playwright": "^2.15.1",
     "assert": "^2.0.0",
     "chai": "^4.4.1",
     "chance": "^1.1.7",
     "expect": "^26.6.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.4",
+    "playwright": "1.44.0",
+    "prettier": "3.2.5",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.2.6",
     "ts-node": "^10.9.2",
     "typescript": "^4.4.3",
     "uuid": "^9.0.1",
-    "ts-loader": "^9.2.6",
     "winston": "^3.13.0"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
     "ts-node": "^10.9.2"
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
