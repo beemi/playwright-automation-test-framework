@@ -35,7 +35,7 @@
     "@estruyf/github-actions-reporter": "^1.7.0",
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.44.1",
-    "@types/node": "^20.13.0",
+    "@types/node": "^20.14.0",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "allure-playwright": "^2.15.1",
