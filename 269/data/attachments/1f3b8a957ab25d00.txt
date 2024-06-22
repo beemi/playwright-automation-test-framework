@@ -1,0 +1,9 @@
+2024-06-22 08:23:52 [home-page] info: Navigated to home page
+2024-06-22 08:23:53 [home-page] info: My account button is visible
+2024-06-22 08:23:54 [home-page] info: Login button is clicked
+2024-06-22 08:23:54 [login-page] info: Email is entered
+2024-06-22 08:23:54 [login-page] info: Password is entered
+2024-06-22 08:23:55 [login-page] info: Login button is clicked
+Current page url is: https://ecommerce-playground.lambdatest.io/index.php?route=account/account
+2024-06-22 08:23:55 [login-page] info: Logout button is clicked
+2024-06-22 08:23:55 [login-page] info: User is logged out

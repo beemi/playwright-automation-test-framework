@@ -1,0 +1,14 @@
+2024-06-22 00:32:19 [home-page] info: Navigated to home page
+2024-06-22 00:32:20 [home-page] info: My account button is visible
+2024-06-22 00:32:20 [home-page] info: Login button is clicked
+2024-06-22 00:32:21 [login-page] info: Continue button is clicked
+2024-06-22 00:32:21 [register-page] info: First name entered
+2024-06-22 00:32:21 [register-page] info: Last name entered
+2024-06-22 00:32:21 [register-page] info: Email entered
+2024-06-22 00:32:22 [register-page] info: Telephone entered
+2024-06-22 00:32:22 [register-page] info: Password entered
+2024-06-22 00:32:22 [register-page] info: Confirm password entered
+2024-06-22 00:32:22 [register-page] info: Subscribe radio button clicked
+2024-06-22 00:32:22 [register-page] info: Privacy policy checkbox clicked
+2024-06-22 00:32:23 [register-page] info: Continue button clicked
+Current page url is: https://ecommerce-playground.lambdatest.io/index.php?route=account/success

@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Jun 22 00:32:15 GMT 2024","Sat Jun 22 00:32:23 GMT 2024","7754","Chrome","tests/register.spec.ts","Create new user account","","","shouln't be able to create a account with existing email",""
+"passed","Sat Jun 22 00:32:15 GMT 2024","Sat Jun 22 00:32:23 GMT 2024","7853","Chrome","tests/register.spec.ts","Create new user account","","","should be able to create a account",""
+"passed","Sat Jun 22 00:32:14 GMT 2024","Sat Jun 22 00:32:23 GMT 2024","8791","Chrome","tests/login.spec.ts","Login tests","","","should be able to login","This test is to verify that user is able to login & logout successfully"

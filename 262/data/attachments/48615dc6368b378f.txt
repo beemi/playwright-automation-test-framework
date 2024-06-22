@@ -1,0 +1,14 @@
+2024-06-15 03:05:34 [home-page] info: Navigated to home page
+2024-06-15 03:05:35 [home-page] info: My account button is visible
+2024-06-15 03:05:35 [home-page] info: Login button is clicked
+2024-06-15 03:05:36 [login-page] info: Continue button is clicked
+2024-06-15 03:05:36 [register-page] info: First name entered
+2024-06-15 03:05:36 [register-page] info: Last name entered
+2024-06-15 03:05:36 [register-page] info: Email entered
+2024-06-15 03:05:36 [register-page] info: Telephone entered
+2024-06-15 03:05:36 [register-page] info: Password entered
+2024-06-15 03:05:37 [register-page] info: Confirm password entered
+2024-06-15 03:05:37 [register-page] info: Subscribe radio button clicked
+2024-06-15 03:05:37 [register-page] info: Privacy policy checkbox clicked
+2024-06-15 03:05:37 [register-page] info: Continue button clicked
+Warning message is: getByText('Warning: E-Mail Address is')
