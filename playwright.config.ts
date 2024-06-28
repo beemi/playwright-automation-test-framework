@@ -1,35 +1,54 @@
-import { PlaywrightTestConfig } from '@playwright/test'
+import { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-    globalSetup: require.resolve('./global-setup'),
-    timeout: 600000,
-    retries: 0,
-    fullyParallel: true,
-    workers: process.env.CI ? 4 : 1,
-    use: {
-        baseURL:
-            process.env.BASE_URL ||
-            'https://ecommerce-playground.lambdatest.io',
-        ignoreHTTPSErrors: true,
-        screenshot: 'only-on-failure',
-        video: 'retain-on-failure',
-        trace: 'retain-on-failure',
-        viewport: {
-            width: 1920,
-            height: 1080,
-        },
-        headless: true,
-        actionTimeout: 30000,
+  globalSetup: require.resolve('./global-setup'),
+  timeout: 600000,
+  retries: 0,
+  fullyParallel: true,
+  workers: process.env.CI ? 4 : 1,
+  use: {
+    baseURL:
+      process.env.BASE_URL || 'https://ecommerce-playground.lambdatest.io',
+    ignoreHTTPSErrors: true,
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+    trace: 'retain-on-failure',
+    viewport: {
+      width: 1920,
+      height: 1080,
     },
-    reporter: [['allure-playwright'], ['@estruyf/github-actions-reporter']],
-    projects: [
-        {
-            name: 'Chrome',
-            use: {
-                browserName: 'chromium',
-            },
+    headless: true,
+    actionTimeout: 30000,
+  },
+  // reporter: [['allure-playwright'], ['@estruyf/github-actions-reporter']],
+  projects: [
+    {
+      name: 'Chrome',
+      use: {
+        browserName: 'chromium',
+        launchOptions: {
+          args: [
+            '--disable-dev-shm-usage',
+            '--no-sandbox',
+            '--remote-debugging-port=9222',
+          ],
         },
-    ],
-}
+      },
+    },
+    {
+      name: 'lightHouse',
+      use: {
+        browserName: 'chromium',
+        launchOptions: {
+          args: [
+            '--disable-dev-shm-usage',
+            '--no-sandbox',
+            '--remote-debugging-port=9222',
+          ],
+        },
+      },
+    },
+  ],
+};
 
-export default config
+export default config;

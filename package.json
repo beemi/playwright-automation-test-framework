@@ -4,17 +4,21 @@
   "directories": {
     "test": "tests"
   },
-  "type": "commonjs",
   "scripts": {
     "clean:reports": "rimraf allure-report allure-results test-results playwright-report",
     "lint": "eslint . --ext .ts --fix",
     "pretty": "prettier --write .",
     "codegen": "npx playwright codegen",
+    "test:local": "npx playwright test --ui --headed",
+    "test:lighthouse": "npx playwright test --project lighthouse",
     "test": "TEST_ENVIRONMENT=dev npx playwright test tests/*.spec.ts",
     "test:headed": "TEST_ENVIRONMENT=dev npx playwright test --ui tests/*.spec.ts",
     "generate:allure:report": "allure generate allure-results -o allure-report --clean",
     "open:allure:report": "allure open allure-report",
-    "prepare": "husky install"
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "repository": {
     "type": "git",
@@ -48,8 +52,10 @@
     "eslint-plugin-unused-imports": "2.0.0",
     "expect": "^26.6.2",
     "husky": "^9.0.11",
+    "lighthouse": "^12.0.0",
     "lint-staged": "^15.2.4",
-    "playwright": "1.44.0",
+    "playwright": "^1.44.0",
+    "playwright-lighthouse": "^4.0.0",
     "prettier": "3.2.5",
     "rimraf": "^3.0.2",
     "ts-loader": "^9.2.6",
@@ -59,8 +65,7 @@
     "winston": "^3.13.0"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "ts-node": "^10.9.2"
+    "dotenv": "^16.4.5"
   },
   "lint-staged": {
     "*.{js,css,md,ts}": [

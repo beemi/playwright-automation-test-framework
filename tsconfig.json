@@ -1,12 +1,13 @@
 {
     "compilerOptions": {
-        "sourceMap": true,
         "target": "es6",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "strict": true,
         "module": "commonjs",
-        "noEmit": true,
-        "resolveJsonModule": true
-    },
-    "include": ["tests", "pages"]
+        "strict": true,
+        "moduleResolution": "node",
+        "typeRoots": ["node_modules/@types"],
+        "esModuleInterop": true,
+        "outDir": "build",
+        "types": ["node", "playwright-lighthouse","playwright","lighthouse"],
+        "include": ["pages", "tests"]
+    }
 }
