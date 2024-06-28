@@ -20,23 +20,19 @@ const config: PlaywrightTestConfig = {
     headless: true,
     actionTimeout: 30000,
   },
-  // reporter: [['allure-playwright'], ['@estruyf/github-actions-reporter']],
+  reporter: [
+    ['allure-playwright'],
+    [
+      'playwright-prometheus-remote-write-reporter',
+      {
+        serverUrl: 'http://metrics.load-test.amelcoinfra.net:9090/api/v1/write',
+      },
+    ],
+    ['@estruyf/github-actions-reporter'],
+  ],
   projects: [
     {
       name: 'Chrome',
-      use: {
-        browserName: 'chromium',
-        launchOptions: {
-          args: [
-            '--disable-dev-shm-usage',
-            '--no-sandbox',
-            '--remote-debugging-port=9222',
-          ],
-        },
-      },
-    },
-    {
-      name: 'lightHouse',
       use: {
         browserName: 'chromium',
         launchOptions: {
