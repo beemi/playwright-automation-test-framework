@@ -25,7 +25,10 @@ const config: PlaywrightTestConfig = {
     [
       'playwright-prometheus-remote-write-reporter',
       {
-        serverUrl: 'http://metrics.load-test.amelcoinfra.net:9090/api/v1/write',
+        serverUrl: process.env.CI
+          ? 'http://localhost:9090/api/v1/write'
+          : 'http://metrics.load-test.amelcoinfra.net:9090/api/v1/write',
+        prefix: 'playwright_',
       },
     ],
     ['@estruyf/github-actions-reporter'],
