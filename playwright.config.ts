@@ -3,7 +3,7 @@ import { PlaywrightTestConfig } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   globalSetup: require.resolve('./global-setup'),
   timeout: 600000,
-  retries: 0,
+  retries: process.env.CI ? 2 : 1,
   fullyParallel: true,
   workers: process.env.CI ? 4 : 1,
   use: {
@@ -21,17 +21,18 @@ const config: PlaywrightTestConfig = {
     actionTimeout: 30000,
   },
   reporter: [
-    ['allure-playwright'],
-    [
-      'playwright-prometheus-remote-write-reporter',
-      {
-        serverUrl: process.env.CI
-          ? 'http://localhost:9090/api/v1/write'
-          : 'http://localhost:9090/api/v1/write',
-        prefix: 'playwright_',
-      },
-    ],
-    ['@estruyf/github-actions-reporter'],
+    ['./reporting/reporter.ts'],
+    // ['allure-playwright'],
+    // [
+    //   'playwright-prometheus-remote-write-reporter',
+    //   {
+    //     serverUrl: process.env.CI
+    //       ? 'http://localhost:9090/api/v1/write'
+    //       : 'http://localhost:9090/api/v1/write',
+    //     prefix: 'playwright_',
+    //   },
+    // ],
+    // ['@estruyf/github-actions-reporter'],
   ],
   projects: [
     {

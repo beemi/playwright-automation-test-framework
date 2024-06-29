@@ -1,24 +1,9 @@
-import { expect } from '@playwright/test';
-import { test as base } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { Severity } from 'allure-js-commons';
 import { allure } from 'allure-playwright';
 import { HomePage } from '../pages/home-page';
 import { LoginPage } from '../pages/login-page';
 import { ConfigUtils } from '../test-utils/config-utils';
-import { Counter, Gauge } from 'playwright-prometheus-remote-write-reporter';
-
-type Context = {
-  urlCalls: Counter;
-};
-
-const test = base.extend<Context>({
-  urlCalls: async ({}, use) => {
-    const counter = new Counter({ name: 'url_calls' });
-    await use(counter);
-    // automatically sends metrics
-    counter.collect();
-  },
-});
 
 test.describe.parallel(
   'Login tests',
@@ -34,7 +19,13 @@ test.describe.parallel(
       loginPage = new LoginPage(page);
     });
 
-    test('should be able to login', async ({ page, urlCalls }) => {
+    test('Invalid page title', async ({ page }) => {
+      await homePage.navigateToHomePage('/');
+
+      expect(await page.title()).toContain('raj');
+    });
+
+    test('should be able to login', async ({ page }) => {
       await allure.description(
         'This test is to verify that user is able to login & logout successfully'
       );
@@ -52,7 +43,6 @@ test.describe.parallel(
 
       await allure.step('Navigate to home page', async () => {
         await homePage.navigateToHomePage('/');
-        urlCalls.inc();
       });
 
       await allure.step('Click on login button', async () => {
